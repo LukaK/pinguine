@@ -13,12 +13,15 @@ sudo firewall-cmd --add-port=1025-65535/udp --permanent
 sudo firewall-cmd --add-service libvirt --zone=libvirt --permanent
 sudo firewall-cmd --reload
 
+# install paru
+# git clone https://aur.archlinux.org/paru && pushd paru && makepkg -si && popd
 
 # packages
-sudo paru -S --noconfirm --skipreview xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings simplescreenrecorder obs-studio papirus-icon-theme vlc viber thunderbird keepassxc xclip google-chrome dropbox libreoffice flameshot zoom newsboat zathura zathura-djvu zathura-ps zathura-cb zathura-pdf-mupdf ttf-dejavu ttf-liberation noto-fonts nitrogen picom lxappearance pcmanfm materia-gtk-theme archlinux-wallpaper stow alacritty zsh zsh-completions cups-pdf transmission-gtk transmission-cli python-neovim xsel wl-clipboard neovim fzf htop pyenv jenv zsh-syntax-highlighting nodejs npm wget ripgrep fd slack-desktop git-remote-codecommit dex i3 xfce4-terminal ttf-font-awesome ttf-ubuntu-font-family thunar thunar-volman gvfs arandr rofi ttf-droid pacman-contrib i3lock xorg-fonts-misc siji-git ttf-unifont awesome-terminal-fonts ttf-sourcecodepro-nerd
+sudo paru -S --noconfirm --skipreview timeshift timeshift-autosnap zramd xorg lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings simplescreenrecorder obs-studio papirus-icon-theme vlc viber thunderbird keepassxc xclip google-chrome dropbox libreoffice flameshot zoom newsboat zathura zathura-djvu zathura-ps zathura-cb zathura-pdf-mupdf ttf-dejavu ttf-liberation noto-fonts nitrogen picom lxappearance pcmanfm materia-gtk-theme archlinux-wallpaper stow alacritty zsh zsh-completions cups-pdf transmission-gtk transmission-cli python-neovim xsel wl-clipboard neovim fzf htop pyenv jenv zsh-syntax-highlighting nodejs npm wget ripgrep fd slack-desktop git-remote-codecommit dex i3 xfce4-terminal ttf-font-awesome ttf-ubuntu-font-family thunar thunar-volman gvfs arandr rofi ttf-droid pacman-contrib i3lock xorg-fonts-misc siji-git ttf-unifont awesome-terminal-fonts ttf-sourcecodepro-nerd ruby virtualenvwrapper
 
 
 # enable display manager
+sudo systemctl enable zramd
 sudo systemctl enable lightdm
 
 # oh-my-zsh with powerlevel 10k
@@ -34,8 +37,13 @@ git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plu
 
 # customize greeter
 
-# TODO: Download dotfiles and set it up
-# TODO: Download vim and set it up
+# Download dotfiles
+# TODO: Setit up
+git clone https://github.com/LukaK/dotfiles
+
+# Download neovim configuration
+git clone https://github.com/LukaK/spacecow ~/.config/nvim
+
 # TODO: Download dropbox files and link them
 # TODO: Zsh syntax highlighting not working
 
