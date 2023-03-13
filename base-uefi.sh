@@ -7,7 +7,7 @@ ln -sf /usr/share/zoneinfo/Europe/Zagreb /etc/localtime
 hwclock --systohc
 
 # locale setup (English and Croatia)
-sed -i '178s/.//' /etc/locale.gen
+sed -i '171s/.//' /etc/locale.gen
 sed -i '273s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
