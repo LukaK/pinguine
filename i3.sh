@@ -40,20 +40,20 @@ rm -rf NordArc
 git clone https://github.com/LukaK/dotfiles
 pushd dotfiles && stow --adopt -t ~ */ && git reset --hard HEAD && popd
 
-# NOTE: Install python plugins for lps wiht lsp install
 # Download neovim configuration and setup python provider venv
-git clone https://github.com/LukaK/spacecow ~/.config/nvim
 pyenv install 3.7.9
 pyenv virtualenv 3.7.9 py3nvim
 pyenv activate py3nvim
 python3 -m pip install pynvim
 pyenv deactivate py3nvim
+git clone https://github.com/LukaK/spacecow ~/.config/nvim
 
 # rofi theme setup
 mkdir ~/local/share/rofi
 pushd /tmp
 git clone https://github.com/newmanls/rofi-themes-collection.git
 cp -r rofi-themes-collection/themes ~/.local/share/rofi
+rm -r rofi-themes-collection
 popd
 
 # zsh configuration
@@ -62,8 +62,9 @@ popd
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# NOTE: customize greeter (lightdm-gtk-greeter-settings)
+# NOTE: Install python plugins for lps wiht lsp install
 # NOTE: customize lxappearance (lxappearance)
+# NOTE: customize greeter (lightdm-gtk-greeter-settings)
 # NOTE: configure credentials for github and configure repositoryes for push privilages
 
 # /bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
