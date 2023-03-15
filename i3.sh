@@ -24,6 +24,9 @@ paru -S --skipreview timeshift timeshift-autosnap zramd xorg lightdm lightdm-gtk
 sudo systemctl enable zramd
 sudo systemctl enable lightdm
 
+# Setup avahi service for cups
+sudo sed -i '/mdns_minimal/!s/^\(hosts:.*\) \(resolve .*\)$/\1 mdns_minimal [NOTFOUND=return] \2/' /etc/nsswitch.conf
+
 # setup virtualenvwrapper with pyenv
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
 
