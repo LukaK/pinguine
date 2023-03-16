@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO: Define the disk
+DISK=/dev/vda
+
 # setup mkinitcpio
 sed -i "/MODULES/s/()/(btrfs)/" /etc/mkinitcpio.conf
 sed -i "/HOOKS/s/filesystems/encrypt filesystems/" /etc/mkinitcpio.conf
