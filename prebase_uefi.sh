@@ -34,3 +34,5 @@ mount "${DISK}1" /mnt/boot
 # base system
 echo "Pacstraping the system..."
 pacstrap /mnt base linux linux-firmware git vim intel-ucode
+
+echo "Use arch-chroot /mnt and run base-ufi script"
