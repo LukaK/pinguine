@@ -49,11 +49,10 @@ pyenv deactivate py3nvim
 git clone https://github.com/LukaK/spacecow ~/.config/nvim
 
 # rofi theme setup
-mkdir ~/local/share/rofi
+mkdir ~/.local/share/rofi
 pushd /tmp
 git clone https://github.com/newmanls/rofi-themes-collection.git
 cp -r rofi-themes-collection/themes ~/.local/share/rofi
-rm -r rofi-themes-collection
 popd
 
 # TODO: Setup this
