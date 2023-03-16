@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# setup mkinitcpio
+sed -i "/MODULES/s/()/(btrfs)/" /etc/mkinitcpio.conf
+sed -i "/HOOKS/s/filesystems/encrypt filesystems/" /etc/mkinitcpio.conf
+mkinitcpio -p linux
+
 # timezone setup
 ln -sf /usr/share/zoneinfo/Europe/Zagreb /etc/localtime
 hwclock --systohc
@@ -17,6 +22,7 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 
+# TODO: Set password
 # setting root password
 echo root:password | chpasswd
 
@@ -44,6 +50,7 @@ systemctl enable libvirtd
 systemctl enable firewalld
 systemctl enable acpid
 
+# TODO: Set password and username
 useradd -m luka
 echo luka:password | chpasswd
 usermod -aG libvirt,wheel luka
