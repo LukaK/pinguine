@@ -66,7 +66,7 @@ echo "timeout 5" >> /boot/loader/loader.conf
 echo "default arch" >> /boot/loader/loader.conf
 cp ./pinguine/arch.conf /boot/loader/entries
 sed -i "s/uuiddevice/$(blkid --output value ${DISK}2 | head -n 1)/" /boot/loader/entries/arch.conf
-sed -i "s/uuidroot/$(lsblk -n -o UUID /dev/mapper/root | head -n 1)/" /boot/loader/entries/arch.conf
+sed -i "s/uuidroot/$(blkid --output value /dev/mapper/root | head -n 1)/" /boot/loader/entries/arch.conf
 cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-fallback.conf
 sed -i "s/initramfs-linux.img/initramfs-linux-fallback.img/" /boot/loader/entries/arch-fallback.conf
 
