@@ -36,10 +36,12 @@ sudo cp -r NordArc/NordArc-Theme /usr/share/themes
 sudo cp -r NordArc/NordArc-Icons /usr/share/icons
 rm -rf NordArc
 
+# TODO: Oh my zsh will overwrite this setup should go after the shell
 # Download dotfiles
 git clone https://github.com/LukaK/dotfiles
 pushd dotfiles && stow --adopt -t ~ */ && git reset --hard HEAD && popd
 
+# TODO: pynvim nije dobro instaliran (reloading or sourcing shell)
 # Download neovim configuration and setup python provider venv
 pyenv install 3.7.9
 pyenv virtualenv 3.7.9 py3nvim
