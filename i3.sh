@@ -56,6 +56,10 @@ cp -r rofi-themes-collection/themes ~/.local/share/rofi
 rm -r rofi-themes-collection
 popd
 
+# TODO: Setup this
+# torrents setup
+mkdir -p Torrents/{Complete,Incomplete}
+
 # zsh configuration
 # TODO: This breaks things if you set zsh as the default shell
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

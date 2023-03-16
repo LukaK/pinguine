@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# partition and format the disc
-
 # timezone setup
 ln -sf /usr/share/zoneinfo/Europe/Zagreb /etc/localtime
 hwclock --systohc
