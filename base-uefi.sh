@@ -51,11 +51,21 @@ systemctl enable firewalld
 systemctl enable acpid
 
 # TODO: Set password and username
+# setup user
 useradd -m luka
 echo luka:password | chpasswd
 usermod -aG libvirt,wheel luka
-
 echo "luka ALL=(ALL) ALL" >> /etc/sudoers.d/luka
 
+# configure bootloader
+bootctl --path=/boot install
+echo "timeout 5" >> /boot/loader/loader.conf
+echo "default arch" >> /boot/loader/loader.conf
+cp ./pinguine/arch.conf /boot/loader/entries
+sed -i "s/uuiddevice/$(lsblk -n -o UUID ${DISK}2 | head -n 1)/" /boot/loader/entries/arch.conf
+sed -i "s/uuidroot/$(lsblk -n -o UUID ${DISK}2 | tail -n 1)/" /boot/loader/entries/arch.conf
+cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-fallback.conf
+sed -i "s/initramfs-linux.img/initramfs-linux-fallback.img/" /boot/loader/entries/arch-fallback.conf
 
-printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
+
+printf "\e[1;32mDone! Type exit, umount -R and reboot.\e[0m"
