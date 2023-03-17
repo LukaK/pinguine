@@ -34,7 +34,7 @@ sudo cp -r NordArc/NordArc-Icons /usr/share/icons
 rm -rf NordArc
 
 # rofi theme setup
-mkdir ~/.local/share/rofi
+mkdir -p ~/.local/share/rofi
 pushd /tmp
 git clone https://github.com/newmanls/rofi-themes-collection.git
 cp -r rofi-themes-collection/themes ~/.local/share/rofi

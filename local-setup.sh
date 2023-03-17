@@ -32,7 +32,3 @@ mkdir -p Torrents/{Complete,Incomplete}
 # NOTE: customize greeter (lightdm-gtk-greeter-settings)
 # NOTE: configure credentials for github and configure repositoryes for push privilages
 # NOTE: Podesi timeshift
-
-/bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
-sleep 5
-reboot
