@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-# TODO: pyenv init?
-source .zshrc
+#!/usr/bin/env zsh
 
 # zsh configuration
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -33,3 +31,7 @@ mkdir -p Torrents/{Complete,Incomplete}
 # NOTE: customize greeter (lightdm-gtk-greeter-settings)
 # NOTE: configure credentials for github and configure repositoryes for push privilages
 # NOTE: Podesi timeshift
+
+/bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
+sleep 5
+reboot
