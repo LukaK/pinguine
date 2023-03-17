@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# TODO: pyenv init?
+source .zshrc
 
 # zsh configuration
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -11,8 +13,6 @@ git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plu
 git clone https://github.com/LukaK/dotfiles
 pushd dotfiles && stow --adopt -t ~ */ && git reset --hard HEAD && popd
 
-# TODO: pyenv init?
-source .zshrc
 
 # Download neovim configuration and setup python provider venv
 pyenv install 3.7.9
