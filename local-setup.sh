@@ -11,6 +11,7 @@ git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plu
 git clone https://github.com/LukaK/dotfiles
 pushd dotfiles && stow --adopt -t ~ */ && git reset --hard HEAD && popd
 
+source ~/.zshrc
 
 # Download neovim configuration and setup python provider venv
 pyenv install 3.7.9
