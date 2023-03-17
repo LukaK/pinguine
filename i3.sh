@@ -71,6 +71,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # NOTE: customize lxappearance (lxappearance)
 # NOTE: customize greeter (lightdm-gtk-greeter-settings)
 # NOTE: configure credentials for github and configure repositoryes for push privilages
+# NOTE: Podesi timeshift
 
 /bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"
 sleep 5
