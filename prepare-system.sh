@@ -33,7 +33,7 @@ mount "${DISK}1" /mnt/boot
 # NOTE: Change intel-ucode to amd-ucode for amd processor
 # base system
 echo "Pacstraping the system..."
-pacstrap /mnt base linux linux-firmware git vim intel-ucode
+pacstrap /mnt base linux linux-firmware git vim amd-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo "Use arch-chroot /mnt and run base-ufi script"
