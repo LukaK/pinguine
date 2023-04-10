@@ -12,9 +12,10 @@ Script execution steps ( after step 4 execute in user space )
 6. local-setup.sh
 7. dropbox_setup.sh
 
-Todo
-----
-* neovim pylsp plugin install (pylsp-mypy, pylsp-rope, python-lsp-black, pyls-isort)
-* setup github credentials
-* setup aws credentials
-* setup timeshift for rollback posibility
+Manual steps
+------------
+* run neovim and let it automatically setup
+* neovim pylsp plugin install (pylsp-mypy, pylsp-rope, python-lsp-black, pyls-isort) ( TODO: Move to a neovim config )
+* add github credentials
+* add aws credentials
+* setup timeshift for rollback posibility ( TODO: Move to a script )
