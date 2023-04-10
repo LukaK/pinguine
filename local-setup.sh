@@ -27,6 +27,3 @@ git clone https://github.com/LukaK/spacecow ~/.config/nvim
 
 # torrents setup
 mkdir -p ~/Torrents/{Complete,Incomplete}
-
-# NOTE: customize greeter (lightdm-gtk-greeter-settings)
-# NOTE: customize wallpaper for nordic theme
