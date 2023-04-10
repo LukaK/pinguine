@@ -18,3 +18,4 @@ Todo
 * neovim pylsp plugin install (pylsp-mypy, pylsp-rope, python-lsp-black, pyls-isort)
 * setup github credentials
 * setup aws credentials
+* setup timeshift for rollback posibility
