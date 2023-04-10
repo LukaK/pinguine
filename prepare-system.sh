@@ -1,17 +1,25 @@
 #!/bin/bash
 
-# TODO: Define the disk
-DISK="/dev/vda"
+
+# change directory to scripts directory
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+pushd $SCRIPT_DIR
+
+# source environment variables
+source ./environment.sh
 
 # partition the disk
 echo "Partitioning the disk $DISK..."
 sgdisk -n 1:0:+300M -t 1:ef00 -n 2:301M $DISK
 
+PARTITION1="$(fdisk -l $DISK | tail -2 | head -1 | awk '{print $1}')"
+PARTITION2="$(fdisk -l $DISK | tail -1 | awk '{print $1}')"
+
 # format the disks
 echo "Formatting the disk..."
-mkfs.fat -F32 "${DISK}1"
-cryptsetup --cipher aes-xts-plain64 --hash sha512 --use-random --verify-passphrase luksFormat "${DISK}2"
-cryptsetup luksOpen "${DISK}2" root
+mkfs.fat -F32 "${PARTITION1}"
+cryptsetup --cipher aes-xts-plain64 --hash sha512 --use-random --verify-passphrase luksFormat "${PARTITION2}"
+cryptsetup luksOpen "${PARTITION2}" root
 mkfs.btrfs /dev/mapper/root
 
 # create subvolumes
@@ -28,7 +36,7 @@ echo "Mounting partitions to /mnt..."
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/mapper/root /mnt
 mkdir /mnt/{boot,home}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/mapper/root /mnt/home
-mount "${DISK}1" /mnt/boot
+mount "${PARTITION1}" /mnt/boot
 
 # NOTE: Change intel-ucode to amd-ucode for amd processor
 # base system
@@ -37,3 +45,6 @@ pacstrap /mnt base linux linux-firmware git vim amd-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo "Use arch-chroot /mnt and run base-ufi script"
+
+# return to the calling directory
+popd

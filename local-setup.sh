@@ -24,7 +24,7 @@ git clone https://github.com/LukaK/spacecow ~/.config/nvim
 
 # TODO: Setup this
 # torrents setup
-mkdir -p Torrents/{Complete,Incomplete}
+mkdir -p ~/Torrents/{Complete,Incomplete}
 
 
 # NOTE: Install python plugins for lps wiht lsp install

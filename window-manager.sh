@@ -28,10 +28,11 @@ sudo systemctl enable lightdm
 sudo sed -i '/mdns_minimal/!s/^\(hosts:.*\) \(resolve .*\)$/\1 mdns_minimal [NOTFOUND=return] \2/' /etc/nsswitch.conf
 
 # download nord theme for lxappearance
+pushd /tmp
 git clone https://github.com/robertovernina/NordArc.git
 sudo cp -r NordArc/NordArc-Theme /usr/share/themes
 sudo cp -r NordArc/NordArc-Icons /usr/share/icons
-rm -rf NordArc
+popd
 
 # rofi theme setup
 mkdir -p ~/.local/share/rofi
