@@ -14,7 +14,6 @@ Script execution steps ( after step 4 execute in user space )
 
 Todo
 ----
-* setup nord theme and icons in lxappearance
 * neovim pylsp plugin install (pylsp-mypy, pylsp-rope, python-lsp-black, pyls-isort)
 * setup github credentials
 * setup aws credentials
