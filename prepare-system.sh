@@ -44,7 +44,7 @@ echo "Pacstraping the system..."
 pacstrap /mnt base linux linux-firmware git vim amd-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 
-echo "Use arch-chroot /mnt and run base-ufi script"
+# copy directory for easy access
+cp -r /pinguine /mnt /mnt/home
 
-# return to the calling directory
-popd
+echo "Use arch-chroot /mnt and run base-ufi script"
