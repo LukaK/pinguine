@@ -68,6 +68,5 @@ cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-fallback.conf
 sed -i "s/initramfs-linux.img/initramfs-linux-fallback.img/" /boot/loader/entries/arch-fallback.conf
 
 
-printf "\e[1;32mDone! Type exit, umount -R and reboot.\e[0m"
-
 popd
+printf "\e[1;32mDone! Type exit, umount -R /mnt and reboot.\e[0m"
