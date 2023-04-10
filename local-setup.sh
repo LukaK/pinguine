@@ -25,13 +25,10 @@ pyenv deactivate py3nvim
 git clone https://github.com/LukaK/spacecow ~/.config/nvim
 
 
-# TODO: Setup this
 # torrents setup
 mkdir -p ~/Torrents/{Complete,Incomplete}
 
 
-# NOTE: Install python plugins for lps wiht lsp install
-# NOTE: customize lxappearance (lxappearance)
 # NOTE: customize greeter (lightdm-gtk-greeter-settings)
 # NOTE: configure credentials for github and configure repositoryes for push privilages
 # NOTE: Podesi timeshift
