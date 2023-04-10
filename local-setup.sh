@@ -11,6 +11,9 @@ git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plu
 git clone https://github.com/LukaK/dotfiles
 pushd dotfiles && stow --adopt -t ~ */ && git reset --hard HEAD && popd
 
+# enable user space services
+systemctl --user enable --now picom
+
 source ~/.zshrc
 
 # Download neovim configuration and setup python provider venv
