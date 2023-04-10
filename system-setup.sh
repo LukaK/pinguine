@@ -21,7 +21,6 @@ sed -i '171s/#\(en_US.UTF-8\)/\1/' /etc/locale.gen
 sed -i '273s/#\(hr_HR.UTF-8\)/\1/' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-# echo "KEYMAP=de_CH-latin1" >> /etc/vconsole.conf
 
 # hostname setup
 echo "arch" >> /etc/hostname
@@ -33,15 +32,11 @@ echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:$ROOT_PASSWORD | chpasswd
 
 # You can remove the tlp package if you are installing on a desktop or vm
-pacman -S efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font ctags
+pacman -Sy efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector acpi acpi_call virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font ctags
 
 # graphic driver setup
 # pacman -S --noconfirm xf86-video-amdgpu
-pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
-
-# setup boot manager
-# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB #change the directory to /boot/efi is you mounted the EFI partition at /boot/efi
-# grub-mkconfig -o /boot/grub/grub.cfg
+pacman -Sy --noconfirm nvidia nvidia-utils nvidia-settings
 
 # enable services
 systemctl enable NetworkManager
