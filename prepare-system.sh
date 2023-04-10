@@ -47,4 +47,4 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # copy directory for easy access
 cp -r /pinguine /mnt /mnt/home
 
-echo "Use arch-chroot /mnt and run base-ufi script"
+printf "\e[1;32mDone! Use arch-chroot /mnt and run system-setup.sh\e[0m"

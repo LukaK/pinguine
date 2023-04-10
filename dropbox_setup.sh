@@ -15,3 +15,5 @@ sudo cp ~/Dropbox/wallpapers/wp2840961-starry-sky-wallpaper-hd.jpg /usr/share/pi
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
 popd
+
+printf "\e[1;32mDone! Reboot the system\e[0m"

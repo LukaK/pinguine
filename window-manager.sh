@@ -43,3 +43,4 @@ popd
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+printf "\e[1;32mDone! Run local-setup.sh.\e[0m"

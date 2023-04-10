@@ -69,4 +69,4 @@ sed -i "s/initramfs-linux.img/initramfs-linux-fallback.img/" /boot/loader/entrie
 
 
 popd
-printf "\e[1;32mDone! Type exit, umount -R /mnt and reboot.\e[0m"
+printf "\e[1;32mDone! Type exit, umount -R /mnt, reboot and run wingow-manager.sh.\e[0m"
