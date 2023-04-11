@@ -10,7 +10,7 @@ Script execution steps ( after step 4 execute in user space )
 4. umount /mnt and reboot
 5. window-manager.sh
 6. local-setup.sh
-7. dropbox_setup.sh
+7. dropbox-setup.sh
 
 Manual steps
 ------------

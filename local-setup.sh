@@ -28,4 +28,4 @@ git clone https://github.com/LukaK/spacecow ~/.config/nvim
 # torrents setup
 mkdir -p ~/Torrents/{Complete,Incomplete}
 
-printf "\e[1;32mDone! Setup dropbox login and run dropbox_setup.sh\e[0m"
+printf "\e[1;32mDone! Setup dropbox login and run dropbox-setup.sh\e[0m"
