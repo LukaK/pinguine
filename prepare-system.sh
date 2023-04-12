@@ -48,6 +48,7 @@ pacstrap /mnt base linux linux-firmware git vim $UCODE_PACKAGE
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # copy directory for easy access
-cp -r /pinguine /mnt /mnt/home
+cp -r /root/pinguine /mnt
+cp -r /root/pinguine /mnt/home
 
 printf "\e[1;32mDone! Use arch-chroot /mnt and run system-setup.sh\e[0m"
