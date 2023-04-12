@@ -38,10 +38,13 @@ mkdir /mnt/{boot,home}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/mapper/root /mnt/home
 mount "${PARTITION1}" /mnt/boot
 
-# NOTE: Change intel-ucode to amd-ucode for amd processor
 # base system
 echo "Pacstraping the system..."
-pacstrap /mnt base linux linux-firmware git vim amd-ucode
+UCODE_PACKAGE="intel-ucode"
+if [ $PROCESSOR_TYPE == 'AMD' ]; then
+    UCODE_PACKAGE="amd-ucode"
+fi
+pacstrap /mnt base linux linux-firmware git vim $UCODE_PACKAGE
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # copy directory for easy access
