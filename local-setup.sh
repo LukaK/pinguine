@@ -13,6 +13,7 @@ pushd ~/dotfiles && stow --adopt -t ~ */ && git reset --hard HEAD && popd
 
 # enable user space services
 systemctl --user enable --now picom
+systemctl --user enable --now caa-sync.timer
 
 source ~/.zshrc
 
