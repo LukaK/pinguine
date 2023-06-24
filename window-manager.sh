@@ -22,6 +22,9 @@ paru -Sy --skipreview --noconfirm timeshift timeshift-autosnap zramd xorg lightd
 # flatpak packages
 flatpak install flathub com.gitlab.ColinDuquesnoy.MellowPlayer
 
+# snap store install
+sudo snap install rambox
+
 
 # enable display manager and zramd
 sudo systemctl enable zramd
