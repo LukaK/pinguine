@@ -15,6 +15,10 @@ pushd ~/dotfiles && stow --adopt -t ~ */ && git reset --hard HEAD && popd
 systemctl --user enable --now picom
 systemctl --user enable --now caa-sync.timer
 
+# user space service configuraiton
+mkdir -p $HOME/.ssh/rclone
+cp org-sync-environment $HOME/.ssh/rclone/environment && chmod 400 $HOME/.ssh/rclone/environment
+
 source ~/.zshrc
 
 # Download neovim configuration and setup python provider venv
