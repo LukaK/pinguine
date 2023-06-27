@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+#
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+pushd $SCRIPT_DIR
 
 # zsh configuration
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -32,5 +35,6 @@ git clone https://github.com/LukaK/spacecow ~/.config/nvim
 
 # torrents setup
 mkdir -p ~/Torrents/{Complete,Incomplete}
+popd
 
-printf "\e[1;32mDone! Setup dropbox login and run dropbox-setup.sh\e[0m"
+printf "\e[1;32mDone! Setup dropbox login, .ssh folder and run dropbox-setup.sh\e[0m"
