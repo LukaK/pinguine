@@ -17,6 +17,7 @@ pushd ~/dotfiles && stow --adopt -t ~ */ && git reset --hard HEAD && popd
 # enable user space services
 systemctl --user enable --now picom
 systemctl --user enable --now caa-sync.timer
+systemctl --user enable --now backup.timer
 
 # user space service configuraiton
 mkdir -p $HOME/.ssh/rclone
