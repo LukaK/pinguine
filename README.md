@@ -19,3 +19,8 @@ Manual steps
 * add github credentials
 * add aws credentials
 * setup timeshift for rollback posibility ( TODO: Move to a script )
+
+TODO
+----
+* omoguci da radi setup skripta sa privatnim repozitorijima
+* omoguci rclone konfiguraciju preko skripte da nemas manualni rad
