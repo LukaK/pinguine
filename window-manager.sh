@@ -22,14 +22,13 @@ paru -Sy --skipreview --noconfirm timeshift timeshift-autosnap zramd xorg lightd
 # flatpak packages
 flatpak install flathub com.gitlab.ColinDuquesnoy.MellowPlayer
 
+# enable display manager and zramd
+sudo systemctl enable --now zramd
+sudo systemctl enable --now lightdm
+sudo systemctl enable --now snapd.socket
+
 # snap store install
 sudo snap install rambox
-
-
-# enable display manager and zramd
-sudo systemctl enable zramd
-sudo systemctl enable lightdm
-sudo systemctl enable snapd.socket
 
 # Setup avahi service for cups
 sudo sed -i '/mdns_minimal/!s/^\(hosts:.*\) \(resolve .*\)$/\1 mdns_minimal [NOTFOUND=return] \2/' /etc/nsswitch.conf
